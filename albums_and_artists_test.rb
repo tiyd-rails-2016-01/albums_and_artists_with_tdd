@@ -17,6 +17,12 @@ class AlbumsAndArtistsTest < Minitest::Test
   def test_can_sell_album
     a = Album.new("Daniel B.", 200, 15)
     a.sell!
-    assert_equal 199, a.number
+    assert_equal 199, a.inventory
+  end
+
+  def test_can_sell_lots_of_albums
+    a = Album.new("Daniel B.", 200, 15)
+    a.sell!(4)
+    assert_equal 196, a.inventory
   end
 end

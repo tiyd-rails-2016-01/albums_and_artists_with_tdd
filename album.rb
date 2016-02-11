@@ -1,13 +1,13 @@
 class Album
-  attr_reader :number
+  attr_reader :inventory
 
-  def initialize(name, number, price)
+  def initialize(name, inventory, price)
     @name = name
-    @number = number
+    @inventory = inventory
     @price = price
   end
 
-  def sell!
-    @number -= 1
+  def sell!(number_sold = 1)
+    @inventory -= number_sold
   end
 end
