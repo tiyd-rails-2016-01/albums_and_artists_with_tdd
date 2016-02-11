@@ -10,8 +10,12 @@ class AlbumsAndArtistsTest < Minitest::Test
     assert Artist
   end
 
-  def test_can_create_album
-    assert Album.new("Daniel B.", 200, 15)
+  def test_can_create_album_and_get_its_attributes
+    a = Album.new("Daniel B.", 200, 15)
+    assert a
+    assert_equal "Daniel B.", a.name
+    assert_equal 200, a.inventory
+    assert_equal 15, a.price
   end
 
   def test_can_sell_album

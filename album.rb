@@ -1,5 +1,5 @@
 class Album
-  attr_reader :inventory
+  attr_reader :name, :inventory, :price
 
   def initialize(name, inventory, price)
     @name = name
