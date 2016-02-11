@@ -29,4 +29,10 @@ class AlbumsAndArtistsTest < Minitest::Test
     a.sell!(4)
     assert_equal 196, a.inventory
   end
+
+  def test_can_discount_album
+    a = Album.new("Daniel B.", 200, 15)
+    a.discount = 0.1
+    assert_equal 13.5, a.price
+  end
 end
