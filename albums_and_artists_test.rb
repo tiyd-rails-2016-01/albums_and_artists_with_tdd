@@ -33,6 +33,6 @@ class AlbumsAndArtistsTest < Minitest::Test
   def test_can_discount_album
     a = Album.new("Daniel B.", 200, 15)
     a.discount = 0.1
-    assert_equal 13.5, a.price
+    assert_in_delta 13.5, a.price, 0.001
   end
 end

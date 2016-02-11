@@ -12,6 +12,7 @@ class Album
     @inventory -= number_sold
   end
 
+  # Same as `attr_writer :discount`
   def discount=(ratio)
     @discount = ratio
   end
