@@ -9,4 +9,8 @@ class AlbumsAndArtistsTest < Minitest::Test
     assert Album
     assert Artist
   end
+
+  def test_can_create_album
+    assert Album.new("Daniel B.", 200, 15)
+  end
 end
