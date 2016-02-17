@@ -7,13 +7,16 @@ ActiveRecord::Base.establish_connection(
   database: 'test.sqlite3'
 )
 
-require './albums_and_artists_migration.rb'
+require './migration_code.rb'
 require './artist.rb'
 require './album.rb'
 
+# This gets rid of all the migration output between your dots.
+ActiveRecord::Migration.verbose = false
+
 class AlbumsAndArtistsTest < Minitest::Test
   def setup
-    AlbumsAndArtistsMigration.migrate(:up)
+    begin AlbumsAndArtistsMigration.migrate(:up); rescue; end
   end
 
   def teardown

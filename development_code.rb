@@ -1,13 +1,18 @@
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(
+  adapter:  'sqlite3',
+  database: 'development.sqlite3'
+)
+
 # PART 1: Include and run the migration.
 #
-# require './database_configuration.rb'
-# require './albums_and_artists_migration.rb'
+# require './migration_code.rb'
 # AlbumsAndArtistsMigration.migrate(:up)
 
 
 # PART 2: Require the classes which match up to the database tables.
 #
-require './database_configuration.rb'
 require './album.rb'
 require './artist.rb'
 
