@@ -1,5 +1,3 @@
-require './database_configuration.rb'
-
 class AlbumsAndArtistsMigration < ActiveRecord::Migration
   def change
     create_table :artists do |t|

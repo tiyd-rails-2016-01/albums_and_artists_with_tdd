@@ -56,15 +56,39 @@ require './artist.rb'
 
 # PART 8: Find an album, then call a method which exists, but which now invokes methods rather than instance variable.  Also note: this is where we MUST HAVE self.inventory, not just inventory.
 #
-first_ok_computer = Album.where(name: "OKCOMPUTER").first
-first_ok_computer.sell!(3)
-first_ok_computer.save
-puts first_ok_computer.price
+# first_ok_computer = Album.where(name: "OKCOMPUTER").first
+# first_ok_computer.sell!(3)
+# first_ok_computer.save
+# puts first_ok_computer.price
 
 
 # PART 9: Use an existing method to add an album to an artist.  This is the old way to do it, and won't work with the new code.
 #
-# album = Album.where(name: "OKCOMPUTER").first
 # artist = Artist.create(name: "The Masontones")
+# album = Album.where(name: "OKCOMPUTER").first
 #
-# artist.add_album(album)
+# album.artist_id = artist.id
+# album.save
+
+
+# artist = Artist.create(name: "The Masontones")
+# album = Album.where(name: "OKCOMPUTER").first
+# # album.artist = artist
+# # album.save
+# artist.albums << album
+# artist.save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#

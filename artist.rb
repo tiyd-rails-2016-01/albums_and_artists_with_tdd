@@ -1,9 +1,7 @@
 class Artist < ActiveRecord::Base
-  def add_album(a)
-    @albums << a
-  end
+  has_many :albums
 
   def discount(ratio)
-    @albums.each {|a| a.discount = ratio}
+    albums.each {|a| a.discount = ratio}
   end
 end
