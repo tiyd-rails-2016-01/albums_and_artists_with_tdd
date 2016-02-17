@@ -1,23 +1,10 @@
-class Album
-  attr_reader :name, :inventory
-
-  def initialize(name, inventory, base_price)
-    @name = name
-    @inventory = inventory
-    @base_price = base_price
-    @discount = 0
-  end
+class Album < ActiveRecord::Base
 
   def sell!(number_sold = 1)
-    @inventory -= number_sold
-  end
-
-  # Same as `attr_writer :discount`
-  def discount=(ratio)
-    @discount = ratio
+    self.inventory = self.inventory - number_sold
   end
 
   def price
-    @base_price * (1 - @discount)
+    base_price * (1 - discount)
   end
 end
